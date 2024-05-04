@@ -1,10 +1,10 @@
 module crg.eti.br/go/dumpHTTP
 
-go 1.21
+go 1.22
 
 require (
 	crg.eti.br/go/config v1.5.0
-	github.com/google/uuid v1.3.0
+	github.com/google/uuid v1.6.0
 )
 
 require (
