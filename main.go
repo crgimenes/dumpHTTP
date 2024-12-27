@@ -94,7 +94,20 @@ func main() {
 		os.Exit(0)
 	}()
 
-	http.HandleFunc("/", handler)
+	mux := http.NewServeMux()
+	mux.HandleFunc("/", handler)
+	mux.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(http.StatusOK)
+	})
+
+	s := &http.Server{
+		Handler:        mux,
+		Addr:           *listenAddr,
+		ReadTimeout:    15 * time.Second,
+		WriteTimeout:   15 * time.Second,
+		MaxHeaderBytes: 1 << 20,
+	}
+
 	log.Printf("Starting dumpHTTP server on %s\n", *listenAddr)
-	log.Fatal(http.ListenAndServe(*listenAddr, nil))
+	log.Fatal(s.ListenAndServe())
 }
