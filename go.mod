@@ -1,6 +1,6 @@
 module crg.eti.br/go/dumpHTTP
 
-go 1.23
+go 1.24
 
 require (
 	crg.eti.br/go/config v1.5.0
