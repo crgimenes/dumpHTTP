@@ -10,3 +10,6 @@ config.ini
 env.sh
 dump.txt
 dumpHTTP
+dumpHTTP-linux-amd64
+release.sh
+
