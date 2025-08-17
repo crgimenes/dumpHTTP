@@ -1,15 +1,5 @@
-module crg.eti.br/go/dumpHTTP
+module dumpHTTP
 
-go 1.24
+go 1.25
 
-require (
-	crg.eti.br/go/config v1.5.0
-	github.com/google/uuid v1.6.0
-)
-
-require (
-	github.com/davecgh/go-spew v1.1.1 // indirect
-	github.com/pmezard/go-difflib v1.0.0 // indirect
-	gopkg.in/ini.v1 v1.67.0 // indirect
-	gopkg.in/yaml.v3 v3.0.1 // indirect
-)
+require github.com/google/uuid v1.6.0
